@@ -30,7 +30,7 @@
 
     {
         "data": {
-            "url": "vegetable-consumption-per-capita.csv"
+            "url": "https://raw.githubusercontent.com/ReenaZele/FIT3179/main/Homework_Wk9/js/vegetable-consumption-per-capita.csv"
           },
           "transform": [
               
