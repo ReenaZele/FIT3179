@@ -1,0 +1,68 @@
+{
+  "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+  "width": 800,
+  "height": 450,
+  "title": "🥦 Average Annual Vegetable Consumption Per Capita 🥬",
+  "projection": {"type": "equalEarth"},
+  "view": {"fill": "#d3f1ff"},
+  "params": [{
+    "name": "Year",
+    "value": 2017,
+    "bind": {
+    "input": "range",
+    "min": 1961,
+    "max": 2017,
+    "step": 1,
+    "name": "Select the year:"
+    }
+    }
+  ],
+  "layer": [
+    {
+      "data": {
+        "url": "world_map.json",
+        "format": {"type": "topojson", "feature": "ne_110m_admin_0_countries"}
+      },
+      "mark": {"type": "geoshape", "fill": "#fffed2", "stroke": "#b3af53"}
+    },
+
+    {
+      "data": {
+        "url": "world_map.json",
+        "format": {"type": "topojson", "feature": "ne_110m_graticules_30"}
+      },
+      "mark": {"type": "geoshape", "fill": null, "stroke": "black", "opacity": 0.15}
+    },
+    
+    {
+      "data": {"url": "veggie_data.csv"},
+      
+      "transform": [
+        {"filter": "datum.Year == Year"}
+      ],
+
+      "mark": {"type": "circle", 
+      "opacity": 0.6, "color": "seagreen"},
+      "encoding": {
+        "longitude": {"field": "Longitude", "type": "quantitative"},
+        "latitude": {"field": "Latitude", "type": "quantitative"},
+        "size": {
+          "field": "Vegetable_Intake",
+          "type": "quantitative",
+          "title": ["Vegetable Intake","Per Capita (kg)"],
+          "scale": {"domain": [0, 420]}
+        },
+        "tooltip": [
+          {"field": "Vegetable_Intake", "type": "quantitative", "title": "Average Annual Vegetable Consumption Per Capita (kg)"},
+          {"field": "Country", "type": "nominal"},
+          {"field": "Year", "type": "ordinal"}
+        ]
+        
+      }
+  
+    }
+    
+    
+  ]
+  
+}
