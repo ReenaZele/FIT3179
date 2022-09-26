@@ -1,0 +1,21 @@
+{
+    "$schema": "https://vega.github.io/schema/vega-lite/v2.json",
+    "data": { "url": "FIT3179/Assignment 2/data/stacked_bar_data.csv"},
+    "mark": "bar",
+    "encoding": {
+      "column": {
+        "field": "Year", "type": "ordinal"
+      },
+      "y": {
+        "aggregate": "sum", "field": "Value", "type": "quantitative",
+        "axis": {"title": "population", "grid": false}
+      },
+      "x": {
+        "field": "Year", "type": "nominal",
+        "axis": {"title": ""}
+      },
+      "color": {
+        "field": "Cause", "type": "nominal"}
+      }
+  }
+  
