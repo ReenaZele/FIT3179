@@ -2,9 +2,9 @@
     "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
     "width": 800,
     "height": 600,
-    "title": "COVID-19 Cases per Country (13 Oct 2020)",
+    "title": "Portion of Dietary Calories Made up of Animal Protein by Country Income Level and GDP",
     "data": {
-      "url": "https://raw.githubusercontent.com/FIT3179/Vega-Lite/main/4_interactive_scatter_plot/data/COVID_19_10_Oct_2020.csv"
+      "url": "https://raw.githubusercontent.com/ReenaZele/FIT3179/main/Assignment%202/data/protein_diet_GDP.csv"
     },
     "params": [
       {
@@ -19,57 +19,58 @@
         }
       },
       {
-        "name": "Continent_selection",
+        "name": "Year",
+        "value": 2013,
+        "bind": {
+          "input": "range",
+          "min": 1961,
+          "max": 2013,
+          "step": 1,
+          "name": "Select the year:"
+        }
+      },
+      {
+        "name": "Income_selection",
         "bind": {
           "input": "select",
           "options": [
             null,
-            "North America",
-            "South America",
-            "Europe",
-            "Africa",
-            "Asia",
-            "Oceania"
-          ],
+            "Low income",
+            "Lower middle income",
+            "Upper middle income",
+            "High income"],
           "labels": [
             "Show All",
-            "North America",
-            "South America",
-            "Europe",
-            "Africa",
-            "Asia",
-            "Oceania"
-          ],
-          "name": "Continent Selection: "
+            "Low Income",
+            "Lower Middle Income",
+            "Upper Middle Income",
+            "High Income"        ],
+          "name": "Income Level Selection: "
         }
       }
     ],
     "transform": [
-      {"filter": "datum.Active > 0"},
-      {"filter": "datum.Deaths > 0"},
+      {"filter": "datum.Year == Year"},
+      {"filter": "datum.Animal_calories > 0"},
+      {"filter": "datum.GDP > 0"},
       {"filter": "datum.Population > Population_Above"},
       {
-        "filter": "Continent_selection == null || datum.Continent == Continent_selection"
-      },
-      {
-        "calculate": "datum.Confirmed/datum.Population * 10000",
-        "as": "Cases per 10,000 Population"
+        "filter": "Income_selection == null || datum.Income_group == Income_selection"
       }
     ],
     "encoding": {
       "x": {
-        "field": "Confirmed",
+        "field": "GDP",
         "type": "quantitative",
-        "title": "Confirmed Cases",
-        "axis": {"tickCount": 7},
-        "scale": {"type": "log", "domain": [1, 10000000]}
+        "title": "GDP per capita",
+        "scale": {"type": "log", "domain": [500, 60000]},
+        "axis": {"tickCount": 10}
       },
       "y": {
-        "field": "Deaths",
+        "field": "Animal_calories",
         "type": "quantitative",
-        "axis": {"tickCount": 6},
-        "scale": {"type": "log", "domain": [1, 1000000]}
-      }
+        "axis" :{"title": "Animal Protein Calories % of Diet"}
+            }
     },
     "layer": [
       {
@@ -86,17 +87,14 @@
             "legend": {"format": ".1s"}
           },
           "color": {
-            "field": "Continent",
+            "field": "Income_group",
             "type": "nominal",
             "scale": {
               "domain": [
-                "North America",
-                "South America",
-                "Europe",
-                "Africa",
-                "Asia",
-                "Oceania"
-              ],
+                "Low income",
+                "Lower middle income",
+                "Upper middle income",
+                "High income"],
               "range": [
                 "#e41a1c",
                 "#984ea3",
@@ -109,49 +107,11 @@
           },
           "opacity": {"value": 0.6},
           "tooltip": [
-            {"field": "Country", "type": "nominal"},
-            {"field": "Confirmed", "type": "quantitative", "format": ","},
-            {"field": "Active", "type": "quantitative", "format": ","},
-            {"field": "Deaths", "type": "quantitative", "format": ","},
-            {"field": "Recovered", "type": "quantitative", "format": ","},
-            {
-              "field": "Cases per 10,000 Population",
-              "type": "quantitative",
-              "format": ".2f"
-            }
-          ]
-        }
-      },
-      {
-        "mark": {
-          "type": "text",
-          "align": "right",
-          "baseline": "middle",
-          "dx": -12,
-          "fontSize": 11.5,
-          "fontStyle": "italic"
-        },
-        "encoding": {
-          "text": {"field": "Country", "type": "nominal"},
-          "color": {"value": "black"},
-          "opacity": {
-            "condition": {
-              "test": "datum['Country'] == 'China' || datum['Country'] == 'Singapore' || datum['Country'] == 'Australia' || datum['Country'] == 'New Zealand' || datum['Country'] == 'Italy' || datum['Country'] == 'Yemen' ||  datum['Country'] == 'United States'",
-              "value": 1
-            },
-            "value": 0
-          },
-          "tooltip": [
-            {"field": "Country", "type": "nominal"},
-            {"field": "Confirmed", "type": "quantitative", "format": ","},
-            {"field": "Active", "type": "quantitative", "format": ","},
-            {"field": "Deaths", "type": "quantitative", "format": ","},
-            {"field": "Recovered", "type": "quantitative", "format": ","},
-            {
-              "field": "Cases per 10,000 Population",
-              "type": "quantitative",
-              "format": ".2f"
-            }
+            {"field": "Income_group", "type": "nominal", "title": "Income Level"},
+            {"field": "GDP", "type": "quantitative", "format": ","},
+            {"field": "Population", "type": "quantitative", "format": ","},
+            {"field": "Animal_calories", "type": "quantitative", "format": ",", "title": "Animal Protein % of Diet"},
+            {"field": "Country", "type": "nominal"}
           ]
         }
       }
