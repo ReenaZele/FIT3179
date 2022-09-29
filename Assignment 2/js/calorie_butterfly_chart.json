@@ -176,7 +176,6 @@
                     "Taiwan",
                     "Tajikistan",
                     "Tanzania",
-                    "Thailand",
                     "Timor",
                     "Morocco",
                     "Senegal",
@@ -405,13 +404,16 @@
         {"filter": "datum.Entity == Country1"}      ],
       "encoding": {
         "y": {
-          "field": "Food Type", "axis": null, "type": "nominal"
+          "field": "Food Type", "axis": null, "type": "nominal", "title": null
         },
         "x": {
           "aggregate": "sum", "field": "Value",
           "title": "Calories",
           "sort": "descending"
         },
+        "tooltip":[{"field": "Food Type", "type": "nominal"},
+            {"field": "Value", "type": "quantitative", "format": ",", "title": "Calories"}
+        ],
         "color": {
           "field": "Food Type" }
       }
