@@ -1,8 +1,9 @@
 {
     "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
-    "width": 800,
-    "height": 600,
-    "title": "🥩Portion of Dietary Calories Comprised of Animal Protein by Country Income Level and GDP🥚",
+    "width": 400,
+    "height": 300,
+    "background": "#EFF9DC",
+    "title": ["🥩Portion of Dietary Calories Comprised","of Animal Protein by Country Income Level and GDP🥚"],
     "data": {
       "url": "https://raw.githubusercontent.com/ReenaZele/FIT3179/main/Assignment%202/data/protein_diet_GDP.csv"
     },
@@ -84,12 +85,13 @@
               "domain": [1000000, 10000000, 50000000, 100000000, 500000000],
               "range": [10, 50, 150, 200, 300, 400]
             },
-            "legend": {"format": ".1s"}
+            "legend": null
           },
           "color": {
             "field": "Income_group",
             "type": "nominal",
             "title": "Income Level",
+            "legend": null,
             "scale": {
               "domain": [
                 "Low income",
@@ -104,8 +106,7 @@
                 "#377eb8",
                 "#a65628"
               ]
-            }
-          },
+            }          },
           "opacity": {"value": 0.6},
           "tooltip": [
             {"field": "Income_group", "type": "nominal", "title": "Income Level"},

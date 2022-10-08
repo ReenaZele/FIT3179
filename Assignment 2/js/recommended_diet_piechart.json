@@ -1,8 +1,9 @@
 {
     "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
     "description": "A simple donut chart with embedded data.",
-    "title": ["Recommended Dietary Components as % of 2500 kcal Daily Intake"],
-    "view": { "stroke": null},
+    "title": {"text": ["Recommended Diet Distribution", "(2500kcal Daily Intake)"]},
+    "view": { "stroke": null, "fill": "#EFF9DC"},
+    "background": "#EFF9DC",
     "data": {
       "values": [
         {"category": "Carbohydrates", "value": 34},
@@ -15,8 +16,8 @@
     "encoding": {
       "theta": {"field": "value", "type": "quantitative", "title": "Percentage Intake (%)","sort":["Carbohydrates","Plant Protein", "Animal Protein","Fats & Sugars"]},
       "color": {"field": "category", "type": "nominal", "title": "Food Type",
-        "legend": {"orient": "left"},
-        "scale": {"range": ["#FF7F50", "#EEE51A", "#FFBF00", "#9FE2BF"]}
-    } 
+        "legend": {"align": "right"},
+        "scale": {"range": ["#d5a6bd", "#f3c06f", "#ffe599", "#b6d7a8"]}
+    }
     }
   }

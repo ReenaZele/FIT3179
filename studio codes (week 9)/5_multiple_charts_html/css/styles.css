@@ -7,19 +7,24 @@ h1 {
 }
 
 body {
-  background-color: lightgray;
+  background-image: url("HealthyFood_07 copy.svg");
+  background-repeat: repeat;
 }
 
 .page {
-  width: 850px;
-  background-color: white;
+  width: 800px;
+  border-radius: 10px;
+  background-color:#DAF7A6;
   margin: auto;
+  margin-top: 20px;
+  margin-bottom: 50px;
   padding: 50px;
   padding-top: 35px;
 }
 
 .vis-container {
   width: 100%;
+
 }
 
 .description h2,
@@ -28,15 +33,22 @@ h1 {
 }
 
 .description-right {
-  padding-left: 20 px;
+  padding-left: 30 px;
+  border-radius: 10px;
+  padding: 20px;
+  background-color: #EFF9DC;
 }
 
 .description-left {
   padding-right: 20px;
+  padding-left: 10px;
 }
 
 .pure-g {
-  margin-bottom: 40px;
+  margin-bottom: 30px;
+  border-radius: 10px;
+  padding: 15px;
+  background-color: #EFF9DC;
 }
 
 .small-font {

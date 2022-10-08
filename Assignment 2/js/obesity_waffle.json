@@ -1,0 +1,33 @@
+{
+    "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+    "data": {"url": "https://raw.githubusercontent.com/ReenaZele/FIT3179/main/Assignment%202/data/obesity_stats.csv"},
+    "title": "Percentage of Population that is Obese or Overweight",
+    "view": {"fill": null, "stroke": null},
+    "background": "#EFF9DC",
+    "width": 250,
+    "height":250,
+    "mark": {
+      "type": "circle",
+      "filled": true,
+      "tooltip": true,
+      "stroke": "black",
+      "strokeWidth": 0.7
+    },
+    "encoding": {
+      "x": {"field": "col", "type": "ordinal", "axis": null, "sort": "-y"},
+      "y": {"field": "row", "type": "ordinal", "axis": null, "sort": "-x"},
+      "color": {
+        "field": "Class",
+        "type": "nominal",
+        "scale": {"range": ["#DAF7A6", "#FF5733","#FFC300"]},
+        "legend": {
+          "orient": "right",
+          "offset": 10,
+          "labelOffset": 3,
+          "titlePadding": 5
+        }
+      },
+      "size": {"value": 241},
+      "tooltip": [{"field": "Class", "type": "nominal"}, {"field": "Percentage", "type": "quantitative"}]
+    }
+  }

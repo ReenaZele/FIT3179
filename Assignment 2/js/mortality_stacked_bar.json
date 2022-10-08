@@ -1,32 +1,34 @@
 {
-    "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
-    "data": { "url": "https://raw.githubusercontent.com/ReenaZele/FIT3179/main/Assignment%202/data/stacked_bar_data.csv"},
-    "mark": "bar",
-    "encoding": {
-      "column": {
-        "field": "Indicator", "type": "ordinal", "title": "",
-    "header": {"labelFontSize": 10, "labelAngle": 50, "titleAngle": 0, "labelOrient": "bottom"}},
-      "y": {
-        "aggregate": "sum", "field": "Value", "type": "quantitative",
-        "axis": {"title": "Deaths", "grid": false} 
+  "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+  "background": "#EFF9DC",
+  "width": 40,
+  "height": 200,
+  "data": { "url": "https://raw.githubusercontent.com/ReenaZele/FIT3179/main/Assignment%202/data/stacked_bar_data.csv"},
+  "mark": "bar",
+  "encoding": {
+    "column": {
+      "field": "Indicator", "type": "ordinal", "title": "",
+  "header": {"labelFontSize": 10, "labelAngle": 60, "titleAngle": 0, "labelOrient": "top", "labelPadding": -50}},
+    "y": {
+      "aggregate": "sum", "field": "Value", "type": "quantitative",
+      "axis": {"title": "Deaths", "grid": false} 
+  },
+    "x": {
+      "field": "Year", "type": "nominal",
+      "axis": {"title": ""}
     },
-      "x": {
-        "field": "Year", "type": "nominal",
-        "axis": {"title": ""}
-      },
-      "tooltip":[{"field": "Cause", "type": "nominal", "title": "Cause"},
-        {"field": "Value", "type": "quantitative", "format": ","}
-    ],
-      "color": {
-        "field": "Cause", "type": "nominal",
-        "legend": {"orient": "bottom"}
-    
-    }
-        
-      },
-      "config": {
-        "view": {"stroke": "transparent"},
-        "axis": {"domainWidth": 1}
-      }
-  }
+    "tooltip":[{"field": "Cause", "type": "nominal", "title": "Cause"},
+      {"field": "Value", "type": "quantitative", "format": ",", "title": "Number of Deaths"}
+  ],
+    "color": {
+      "field": "Cause", "type": "nominal",
+      "legend": {"orient": "bottom"}
   
+  }
+      
+    },
+    "config": {
+      "view": {"stroke": "transparent"},
+      "axis": {"domainWidth": 1}
+    }
+}

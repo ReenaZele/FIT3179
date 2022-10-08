@@ -1,8 +1,9 @@
 {
     "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
-    "width": 800,
-    "height": 600,
-    "title": "Share of Dietary Energy from Carbohydrates vs GDP per Capita",
+    "width": 400,
+    "height": 300,
+    "background": "#EFF9DC",
+    "title": ["Share of Dietary Energy from", "Carbohydrates vs GDP per Capita"],
     "data": {
       "url": "https://raw.githubusercontent.com/ReenaZele/FIT3179/main/Assignment%202/data/cereal_diet_GDP.csv"
     },
@@ -90,6 +91,7 @@
             "field": "Income_group",
             "type": "nominal",
             "title": "Income Level",
+            "legend":null,
             "scale": {
               "domain": [
                 "Low income",
@@ -111,7 +113,7 @@
             {"field": "Income_group", "type": "nominal", "title": "Income Level"},
             {"field": "GDP", "type": "quantitative", "format": ","},
             {"field": "Population", "type": "quantitative", "format": ","},
-            {"field": "Cereal_energy_share", "type": "quantitative", "format": ",", "title": "Animal Protein % of Diet"},
+            {"field": "Cereal_energy_share", "type": "quantitative", "format": ",", "title": "Carbohydrate % of Dietary Energy"},
             {"field": "Country", "type": "nominal"}
           ]
         }

@@ -1,15 +1,16 @@
 {
   "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
   "title": "🥦 Annual Vegetable Consumption Per Capita 🥬",
-  "width": 800,
+  "width": 600,
   "height": 400,
   "projection": {"type": "equalEarth"},
+  "background": "#EFF9DC",
   "view": {"fill": null, "stroke": null},
 
   "params": [
       {
         "name": "Year",
-        "value": 2010,
+        "value": 2017,
         "bind": {
           "input": "range",
           "min": 1961,
@@ -80,7 +81,7 @@
           "color": {
               "field": "vegetable_intake", 
               "type": "quantitative",
-              "title": "Vegetable Consumption (kg)",
+              "title": ["Vegetable" , "Consumption", "(kg)"],
               "bin": true             },
           "tooltip": [
             {"field": "properties.NAME", "type": "nominal", "title": "Country"},

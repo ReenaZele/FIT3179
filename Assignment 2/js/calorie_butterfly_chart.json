@@ -1,8 +1,9 @@
 {
     "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
-    "description": "A population pyramid for the US in 2000.",
     "data": { "url": "https://raw.githubusercontent.com/ReenaZele/FIT3179/main/Assignment%202/data/caloric-supply-derived-from-carbohydrates-protein-and-fat.csv"},
-
+    "height": 400,
+    "width": 500,
+    "background": "#EFF9DC",
     "params": [
         {
           "name": "Year",
@@ -210,7 +211,7 @@
           },
           {
             "name": "Country2",
-            "value": "Australia",
+            "value": "New Zealand",
             "bind": {
                 "input": "select",
                 "options": [
@@ -397,8 +398,9 @@
       "transform": [
         {"filter": "datum.Year == Year"}      ],
     "spacing": 0,
+
     "hconcat": [{
-      "title": "Country 1",
+      "title": {"text":{"expr": "Country1"}},
       "mark": "bar",
       "transform": [
         {"filter": "datum.Entity == Country1"}      ],
@@ -418,7 +420,7 @@
           "field": "Food Type" }
       }
     }, {
-      "width": 20,
+      "width": 300,
       "view": {"stroke": null},
       "mark": {
         "type": "text",
@@ -426,10 +428,12 @@
       },
       "encoding": {
         "y": {"field": "Food Type", "type": "nominal", "axis": null},
-        "text": {"field": "Food Type", "type": "nominal"}
+        "text": {"field": "Food Type", "type": "nominal"},
+        "color": {"scale": {"range": ["#d5a6bd", "#f3c06f", "#ffe599", "#b6d7a8"]},
+      "legend":null}
       }
-    }, {
-      "title": "Country 2",
+      }, {
+      "title": {"text": {"expr": "Country2"}},
       "mark": "bar",
       "transform": [
         {"filter": "datum.Entity == Country2"}      ],
@@ -442,9 +446,13 @@
           "aggregate": "sum", "field": "Value",
           "title": "Calories"},
         "color": {
-          "field": "Food Type" }
-      }
-    }],
+          "field": "Food Type",
+          "scale": {"range": ["#d5a6bd", "#f3c06f", "#ffe599", "#b6d7a8"]},
+        "legend": null},
+          "tooltip":[{"field": "Food Type", "type": "nominal"},
+            {"field": "Value", "type": "quantitative", "format": ",", "title": "Calories"}
+        ]}    }
+  ],
     "config": {
       "view": {"stroke": null},
       "axis": {"grid": false}
