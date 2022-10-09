@@ -12,7 +12,7 @@ body *{
   }
   
   .page {
-    width: 900px;
+    width: 1050px;
     border-radius: 15px;
     background-color:#DAF7A6;
     margin: auto;
@@ -60,10 +60,3 @@ body *{
   .small-font {
     font-size: 14px;
   }
-
-  .center {
-    display: block;
-    margin-left: 100px;
-  }
-
-  .bigger { font-size:110%; }

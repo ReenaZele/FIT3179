@@ -1,11 +1,11 @@
 {
     "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
-    "height": 200,
-    "width": 300,
+    "width": 400,
+    "height": 300,
     "background": "#EFF9DC",
-    "title": ["🥩Portion of Dietary Calories Comprised of Animal Protein", "by Country Income Level and GDP🥚"],
+    "title": ["🍞Share of Dietary Energy from Carbohydrates vs GDP", "per Capita🥔"],
     "data": {
-      "url": "https://raw.githubusercontent.com/ReenaZele/FIT3179/main/Assignment%202/data/protein_diet_GDP.csv"
+      "url": "https://raw.githubusercontent.com/ReenaZele/FIT3179/main/Assignment%202/data/cereal_diet_GDP.csv"
     },
     "params": [
       {
@@ -21,11 +21,11 @@
       },
       {
         "name": "Year",
-        "value": 2013,
+        "value": 2011,
         "bind": {
           "input": "range",
-          "min": 1961,
-          "max": 2013,
+          "min": 1992,
+          "max": 2011,
           "step": 1,
           "name": "Select the year:"
         }
@@ -52,7 +52,7 @@
     ],
     "transform": [
       {"filter": "datum.Year == Year"},
-      {"filter": "datum.Animal_calories > 0"},
+      {"filter": "datum.Cereal_energy_share > 0"},
       {"filter": "datum.GDP > 0"},
       {"filter": "datum.Population > Population_Above"},
       {
@@ -68,9 +68,9 @@
         "axis": {"tickCount": 10}
       },
       "y": {
-        "field": "Animal_calories",
+        "field": "Cereal_energy_share",
         "type": "quantitative",
-        "axis" :{"title": "Animal Protein Calories % of Diet"}
+        "axis" :{"title": "Carbohydrate Calories % of Diet"}
             }
     },
     "layer": [
@@ -85,13 +85,13 @@
               "domain": [1000000, 10000000, 50000000, 100000000, 500000000],
               "range": [10, 50, 150, 200, 300, 400]
             },
-            "legend": null
+            "legend": {"format": ".1s"}
           },
           "color": {
             "field": "Income_group",
             "type": "nominal",
             "title": "Income Level",
-            "legend": null,
+            "legend":null,
             "scale": {
               "domain": [
                 "Low income",
@@ -106,13 +106,14 @@
                 "#377eb8",
                 "#a65628"
               ]
-            }          },
+            }
+          },
           "opacity": {"value": 0.6},
           "tooltip": [
             {"field": "Income_group", "type": "nominal", "title": "Income Level"},
             {"field": "GDP", "type": "quantitative", "format": ","},
             {"field": "Population", "type": "quantitative", "format": ","},
-            {"field": "Animal_calories", "type": "quantitative", "format": ",", "title": "Animal Protein % of Diet"},
+            {"field": "Cereal_energy_share", "type": "quantitative", "format": ",", "title": "Carbohydrate % of Dietary Energy"},
             {"field": "Country", "type": "nominal"}
           ]
         }

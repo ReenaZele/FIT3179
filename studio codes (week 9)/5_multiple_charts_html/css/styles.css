@@ -54,3 +54,8 @@ h1 {
 .small-font {
   font-size: 14px;
 }
+
+.center {
+  display: block;
+  margin-left: 100px;
+}
