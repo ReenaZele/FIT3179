@@ -1,9 +1,9 @@
 {
     "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
     "data": { "url": "https://raw.githubusercontent.com/ReenaZele/FIT3179/main/Assignment%202/data/caloric-supply-derived-from-carbohydrates-protein-and-fat.csv"},
-    "height": 200,
-    "width": 300,
-    "background": "#EFF9DC",
+    "height": 300,
+    "width": 500,
+    "background": "#f8ffec",
     "params": [
         {
           "name": "Year",

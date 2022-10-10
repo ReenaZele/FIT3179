@@ -1,6 +1,6 @@
 {
   "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
-  "background": "#EFF9DC",
+  "background": "#f8ffec",
   "width": 30,
   "height": 200,
   "params": [
@@ -29,7 +29,8 @@
   ],
     "color": {
       "field": "Cause", "type": "nominal",
-      "legend": {"orient": "bottom"}
+      "legend": {"orient": "bottom"},
+      "scale": {"range": [ "#4e79a7","#ff9da7", "#dabeed", "#98cee3"]}
   },
   "opacity": {
       "condition": {"param": "legend_selection", "value": 1},

@@ -1,9 +1,9 @@
 {
     "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
     "description": "A simple donut chart with embedded data.",
-    "title": {"text": ["Recommended Diet Distribution", "(2500kcal Daily Intake)"]},
-    "view": { "stroke": null, "fill": "#EFF9DC"},
-    "background": "#EFF9DC",
+    "title": {"text": ["Recommended Diet Distribution", "(2500kcal Daily Intake)"], "titleFont": "'Open Sans'"},
+    "view": { "stroke": null, "fill": null},
+    "background": "#f8ffec",
     "data": {
       "values": [
         {"category": "Carbohydrates", "value": 34},
@@ -16,7 +16,7 @@
     "encoding": {
       "theta": {"field": "value", "type": "quantitative", "title": "Percentage Intake (%)","sort":["Carbohydrates","Plant Protein", "Animal Protein","Fats & Sugars"]},
       "color": {"field": "category", "type": "nominal", "title": "Food Type",
-        "legend": {"align": "right"},
+        "legend": null,
         "scale": {"range": ["#d5a6bd", "#f3c06f", "#ffe599", "#b6d7a8"]}
     }
     }

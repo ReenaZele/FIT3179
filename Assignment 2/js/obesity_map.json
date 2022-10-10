@@ -3,7 +3,7 @@
     "title": "Global Adult Overweightness and Obesity Prevalence by %",
     "width": 600,
     "height": 300,
-    "background": "#EFF9DC",
+    "background": "#f8ffec",
     "projection": {"type": "equalEarth", "scale": {"expr": "zoom_level"}, "center": {"expr": "center_to"}},
         "view": {"fill":null, "stroke": null},
   

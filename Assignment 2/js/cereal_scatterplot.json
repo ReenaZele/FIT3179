@@ -2,7 +2,7 @@
     "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
     "height": 200,
     "width": 300,
-    "background": "#EFF9DC",
+    "background": "#f8ffec",
     "title": ["🍞Share of Dietary Energy from Carbohydrates vs GDP", "per Capita🥔"],
     "data": {
       "url": "https://raw.githubusercontent.com/ReenaZele/FIT3179/main/Assignment%202/data/cereal_diet_GDP.csv"

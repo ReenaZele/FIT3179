@@ -2,9 +2,9 @@
   "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
   "title": "🥦Annual Vegetable Consumption Per Capita🥬",
   "width": 600,
-  "height": 400,
+  "height": 300,
   "projection": {"type": "equalEarth", "scale": {"expr": "zoom_level"}, "center": {"expr": "center_to"}},
-  "background": "#EFF9DC",
+  "background": "#f8ffec",
   "view": {"fill": null, "stroke": null},
 
   "params": [

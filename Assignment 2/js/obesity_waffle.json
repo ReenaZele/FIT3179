@@ -3,7 +3,7 @@
     "data": {"url": "https://raw.githubusercontent.com/ReenaZele/FIT3179/main/Assignment%202/data/obesity_stats.csv"},
     "title": "Percentage of Population that is Obese or Overweight",
     "view": {"fill": null, "stroke": null},
-    "background": "#EFF9DC",
+    "background": "#f8ffec",
   
     "width": 250,
     "height":250,

@@ -4,7 +4,7 @@
     "data": {"url": "https://raw.githubusercontent.com/ReenaZele/FIT3179/main/Assignment%202/data/food_consumption_merged.csv",
     "format": {"parse": {"Kilocalories": "number"}}},
     "title":"Percentage Food Type Breakdown by Continent",
-    "background": "#EFF9DC",
+    "background": "#f8ffec",
     "params": [     
       {
         "name": "Regions",
