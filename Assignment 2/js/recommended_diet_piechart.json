@@ -1,7 +1,7 @@
 {
     "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
     "description": "A simple donut chart with embedded data.",
-    "title": {"text": ["Recommended Diet Distribution", "(2500kcal Daily Intake)"], "titleFont": "'Open Sans'"},
+    "title": {"text": ["Recommended Diet Distribution", "(2500kcal Daily Intake)"], "titleFont": "Poppins"},
     "view": { "stroke": null, "fill": null},
     "background": "#f8ffec",
     "data": {

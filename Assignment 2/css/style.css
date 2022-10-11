@@ -25,11 +25,13 @@ body *{
   .vis-container {
     width: 100%;
     margin-left: 100px;
+    font-family: 'Poppins', sans-serif;
   
   }
 
   .vis-container2 {
     width: 100%;
+    font-family: 'Poppins', sans-serif;
   
   }
   
@@ -43,6 +45,7 @@ body *{
     border-radius: 15px;
     padding: 20px;
     background-color: #f8ffec;
+    font-family: 'Poppins', sans-serif;
   }
   
   .description-left {
@@ -55,6 +58,7 @@ body *{
     border-radius: 10px;
     padding: 15px;
     background-color: #f8ffec;
+    font-family: 'Poppins', sans-serif;
   }
   
   .small-font {
@@ -75,9 +79,9 @@ body *{
   }
 
   .absolute {
-    position: absolute;
-    top: 485px;
-    right: 560px;
+    position: relative;
+    top: -30px;
+    left: 15px;
     width: 60px;
     height: 210px;
   }
