@@ -30,9 +30,10 @@
         "scale": {"range": ["#DAF7A6", "#FF5733","#FFC300"]},
         "legend": {
           "orient": "right",
-          "offset": 10,
+          "offset": 15,
           "labelOffset": 3,
-          "titlePadding": 5
+          "titlePadding": 10,
+          "title": null
         }
       },
       "opacity": {
