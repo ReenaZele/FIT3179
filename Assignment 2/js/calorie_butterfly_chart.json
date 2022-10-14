@@ -399,7 +399,7 @@
   "spacing": 0,
 
   "hconcat": [{
-    "title": {"text":{"expr": "Country1"}},
+    "title": {"text":{"expr": "Country1"}, "fontSize":16},
     "transform": [
       {"filter": "datum.Entity == Country1"}      ],
     "encoding": {
@@ -409,15 +409,13 @@
       "x": {
         "aggregate": "sum", "field": "Value",
         "title": "Calories",
-        "sort": "descending",
-        "scale": {"domain": [0, 1900]}
+        "sort": "descending"
       },
       "tooltip":[{"field": "Food Type", "type": "nominal"},
           {"field": "Value", "type": "quantitative", "format": ",", "title": "Calories"}
       ],
       "color": {
-        "field": "Food Type" }
-    },
+        "field": "Food Type" }      },
     "layer": [{
   "mark": "bar"
 }, {
@@ -425,11 +423,11 @@
     "type": "text",
     "align": "right",
     "baseline": "middle",
-    "dx": -8,
-    "color": "black"
-  },
+    "dx": -8  },
   "encoding": {
-    "text": {"field": "Value", "type": "quantitative"}
+    "text": {"field": "Value", "type": "quantitative"},
+    "color":{"value": "black"}
+    
   }
 }]
   }, {
@@ -437,7 +435,8 @@
     "view": {"stroke": null},
     "mark": {
       "type": "text",
-      "align": "center"
+      "align": "center",
+      "fontSize":17
     },
     "encoding": {
       "y": {"field": "Food Type", "type": "nominal", "axis": null},
@@ -446,7 +445,7 @@
     "legend":null}
     }
     }, {
-    "title": {"text": {"expr": "Country2"}},
+    "title": {"text": {"expr": "Country2"}, "fontSize":16},
     "transform": [
       {"filter": "datum.Entity == Country2"}      ],
     "encoding": {
@@ -456,8 +455,7 @@
       },
       "x": {
         "aggregate": "sum", "field": "Value",
-        "title": "Calories",
-        "scale": {"domain": [0, 1900]}},
+        "title": "Calories"},
       "color": {
         "field": "Food Type",
         "scale": {"range": ["#d5a6bd", "#f3c06f", "#ffe599", "#b6d7a8"]},
@@ -476,11 +474,13 @@
     "color": "black"
   },
   "encoding": {
-    "text": {"field": "Value", "type": "quantitative"}
+    "text": {"field": "Value", "type": "quantitative"},
+    "color": {"value": "black"}
   }
 }]    }
 ],
   "config": {
     "view": {"stroke": null},
-    "axis": {"grid": false}    }
+    "axis": {"grid": false},
+    "font": "Helvetica"    }
 }

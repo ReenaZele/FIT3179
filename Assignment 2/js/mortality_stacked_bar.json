@@ -40,6 +40,7 @@
     },
     "config": {
       "view": {"stroke": "transparent"},
-      "axis": {"domainWidth": 1}
+      "axis": {"domainWidth": 1},
+      "font": "Helvetica"
     }
 }

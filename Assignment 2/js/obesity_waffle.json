@@ -41,5 +41,9 @@
       },
       "size": {"value": 241},
       "tooltip": [{"field": "Class", "type": "nominal"}, {"field": "Percentage", "type": "quantitative"}]
-    }
+    },
+    "config": {
+      "view": {"stroke": null},
+      "axis": {"grid": false},
+      "font": "Helvetica"}
   }

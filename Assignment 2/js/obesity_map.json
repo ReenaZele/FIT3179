@@ -1,11 +1,11 @@
 {
     "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
-    "title": "Global Adult Overweightness and Obesity Prevalence by %",
+    "title": {"text": "Global Adult Overweightness and Obesity Prevalence",  "fontSize":22},
     "width": 600,
     "height": 300,
     "background": "#f8ffec",
-    "projection": {"type": "equalEarth", "scale": {"expr": "zoom_level"}, "center": {"expr": "center_to"}},
-        "view": {"fill":null, "stroke": null},
+    "projection": {"type": "equalEarth", "scale": {"expr": "if(toString(center_to) == [0,0], 100, if(toString(center_to) == [15,3], 200, if(toString(center_to) == [40,50], 200, if(toString(center_to) == [100,30], 200, if(toString(center_to) == [-50,0], 150, if(toString(center_to) == [150,-20], 200, 100))))))"}, "center": {"expr": "center_to"}},
+    "view": {"fill":null, "stroke": null},
   
     "params": [
         {
@@ -19,17 +19,6 @@
             "name": "Select the year:"
           }
         },
-        {
-            "name": "zoom_level",
-            "value": 101,
-            "bind": {
-              "input": "range",
-              "min": 10,
-              "max": 300,
-              "step": 1,
-              "name": "Zoom: "
-            }
-          },
           {
             "name": "center_to",
             "value": [0, 0],
@@ -152,9 +141,10 @@
           "mark": {
             "type": "text",
             "align": "right",
-            "dx":100,
+            "dx":150,
             "baseline": "middle",
-            "fontStyle": "italic"
+            "fontStyle": "bold",
+            "fontSize": 13
           },
           "encoding": {"text": {"field": "text_annotation"}, "latitude":{ "field": "Latitude", "type": "quantitative"},
         "longitude":{"field": "Longitude", "type": "quantitative"}}
@@ -191,7 +181,8 @@
             "align": "right",
             "dx": 10,
             "baseline": "middle",
-            "fontStyle": "italic"
+            "fontStyle": "bold",
+            "fontSize": 13
           },
           "encoding": {"text": {"field": "text_annotation"}, "latitude":{ "field": "Latitude", "type": "quantitative"},
         "longitude":{"field": "Longitude", "type": "quantitative"}}
@@ -205,6 +196,10 @@
           "format": {"type": "topojson", "feature": "ne_110m_graticules_30"}
         },
         "mark": {"type": "geoshape", "fill": null, "stroke": "black", "opacity": 0.15}
-      }   ]
+      }   ],
+      "config": {
+        "view": {"stroke": null},
+        "axis": {"grid": false},
+        "font": "Helvetica"}
   }
   

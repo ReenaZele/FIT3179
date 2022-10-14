@@ -1,9 +1,9 @@
 {
   "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
-  "title": "🍉Annual Fruit Consumption Per Capita🍍",
+  "title": {"text": "🍉Annual Fruit Consumption Per Capita🍍",  "fontSize":22},
   "width": 600,
   "height": 300,
-  "projection": {"type": "equalEarth", "scale": {"expr": "zoom_level"}, "center": {"expr": "center_to"}},
+  "projection": {"type": "equalEarth", "scale": {"expr": "if(toString(center_to) == [0,0], 100, if(toString(center_to) == [15,3], 200, if(toString(center_to) == [40,50], 200, if(toString(center_to) == [100,30], 200, if(toString(center_to) == [-50,0], 150, if(toString(center_to) == [150,-20], 200, 100))))))"}, "center": {"expr": "center_to"}},
   "background": "#f8ffec",
   "view": {"fill": null, "stroke": null},
 
@@ -18,17 +18,6 @@
           "step": 1,
           "name": "Select the year:"
         }},
-        {
-          "name": "zoom_level",
-          "value": 108,
-          "bind": {
-            "input": "range",
-            "min": 10,
-            "max": 500,
-            "step": 1,
-            "name": "Zoom: "
-          }
-        },
         {
           "name": "center_to",
           "value": [0, 0],
@@ -157,5 +146,9 @@
     }
   }
 }
- ]
+ ],
+ "config": {
+  "view": {"stroke": null},
+  "axis": {"grid": false},
+  "font": "Helvetica"}
 }

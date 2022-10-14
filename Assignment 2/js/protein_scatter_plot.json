@@ -117,5 +117,9 @@
           ]
         }
       }
-    ]
+    ],
+    "config": {
+  "view": {"stroke": null},
+  "axis": {"grid": false},
+  "font": "Helvetica"}
   }

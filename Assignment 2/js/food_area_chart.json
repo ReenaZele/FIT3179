@@ -44,5 +44,9 @@
         "condition": {"param": "legend_selection", "value": 1},
         "value": 0.1
       }
-    }
+    },
+    "config": {
+      "view": {"stroke": null},
+      "axis": {"grid": false},
+      "font": "Helvetica"}
   }
