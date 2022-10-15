@@ -136,7 +136,7 @@
   "encoding": {
     "longitude": {"field": "longitude", "type": "quantitative"},
     "latitude": {"field": "latitude", "type": "quantitative"},
-    "text": {"field": "properties.NAME", "type": "nominal"},
+    "text": {"field": "", "type": "nominal"},
     "opacity": {
       "condition": {
         "test": "datum['properties.NAME'] == 'China' || datum['properties.NAME'] == 'Brazil' || datum['properties.NAME'] == 'Australia' || datum['properties.NAME'] == 'Malaysia' ||  datum['properties.NAME'] == 'Yemen' ||  datum['properties.NAME'] == 'United States of America'",

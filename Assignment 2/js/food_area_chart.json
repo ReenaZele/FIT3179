@@ -3,7 +3,7 @@
     "autosize": {"resize": true},
     "data": {"url": "https://raw.githubusercontent.com/ReenaZele/FIT3179/main/Assignment%202/data/food_consumption_merged.csv",
     "format": {"parse": {"Kilocalories": "number"}}},
-    "title":"Percentage Food Type Breakdown by Continent",
+    "title":"Normalised Food Type Breakdown by Continent",
     "background": "#f8ffec",
     "params": [     
       {
